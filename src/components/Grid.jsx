@@ -5,7 +5,7 @@ import { Parallax } from "./Parallax";
 
 const Grid = () => {
     return (
-        <div className="h-screen w-full work grid grid-cols-2 grid-rows-4 gap-[3vh]">
+        <div className="h-screen w-full work grid grid-cols-2 grid-rows-4 gap-[3vh] relative z-0">
             <div className="work__item rounded-3xl p-6 col-span-2">
                 Item 1
             </div>
@@ -18,20 +18,20 @@ const Grid = () => {
                         width={400}
                         height={600}
                         sizes="50vw"
-                        className="object-cover rounded-3xl w-full h-full"
+                        className="object-cover rounded-3xl w-full h-full pointer-events-none"
                     />
                 </div>
             </div>
             <div className="work__item rounded-3xl p-6 row-span-3">
                 <h2 className="font-bold text-xl">Believe.</h2>
-                <Parallax speed={10} className="self-center">
+                <Parallax speed={8} className="self-center">
                     <Image
                         src={"https://picsum.photos/400/600?random=8"}
                         alt="Image"
                         width={400}
                         height={600}
                         sizes="50vw"
-                        className="object-cover rounded-3xl w-full h-full"
+                        className="object-cover rounded-3xl w-full h-full pointer-events-none"
                     />
                 </Parallax>
             </div>
