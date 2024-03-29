@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+
+  /* BG */
+  --primary-bg: #F8FBF8;
+  --alter-primary-bg: #1d1d1d;
+  --secondary-bg: #BED3CA;
+  --actions-bg: #363636;
+
+  /* Font */
+  --primary-font: #1d1d1d;
+  --secondary-font: #F8FBF8;
+  --descriptions-font: #b8bbb8;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: var(--primary-font);
+  background: var(--primary-bg);
+  /* background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb)); */
+}
+
+p {
+  color: var(--descriptions-font);
+}
+
+.hero {
+  background: #0F2027;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #203b47, #192e35, var(--alter-primary-bg)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  color: var(--secondary-font);
+}
+
+.hero.actions {
+  background: var(--alter-primary-bg);
+}
+
+.work {
+  color: var(--secondary-font);
+}
+
+.work__item {
+  background: var(--secondary-bg);
+}
+
+.color-mode {
+  fill: var(--secondary-font);
+}
