@@ -1,16 +1,18 @@
 import Grid from "@/components/Grid";
+import GridAux from "@/components/GridAux";
 import Hero from "@/components/Hero";
 import ImageList from "@/components/ImageList";
+import Menu from "@/components/Menu";
 import Nav from "@/components/Nav";
 
 export default function Home() {
   return (
-    <main className="py-[2vh] px-6 xl:p-32 flex flex-col gap-[3vh] w-full min-h-screen">
+    <main className="flex flex-col w-full min-h-screen">
       {/* <ImageList /> */}
-      <Nav />
       <Hero />
+      <Menu />
       <Grid />
-      <Grid />
+      <GridAux />
     </main>
   );
 }
