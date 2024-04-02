@@ -7,7 +7,7 @@ import { ScrollShowAnimation } from "./ScrollShowAnimation";
 const GridAux = () => {
     return (
         <div className="max-h-[90vh] w-full relative z-0 top-[-1px]">
-            <ScrollShowAnimation className="scroll-wrapper grid grid-cols-2 items-center gap-[3vh] pt-[20vh] px-6 xl:p-32 work aux w-full h-full">
+            <ScrollShowAnimation className="scroll-wrapper grid grid-cols-2 items-center gap-[3vh] px-6 xl:p-32 work aux w-full h-full">
                 <Parallax speed={5} className="self-center row-span-3">
                     <div className="relative">
                         <div className="work__item rounded-3xl p-6 flex flex-col gap-[2vh]">
