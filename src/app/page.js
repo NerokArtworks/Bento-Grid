@@ -13,6 +13,7 @@ export default function Home() {
       <Menu />
       <Grid />
       <GridAux />
+      <GridAux />
     </main>
   );
 }
