@@ -1,39 +1,61 @@
 "use client";
-import { Inter } from "next/font/google";
-import { useLenis } from "@studio-freight/react-lenis";
+import { Urbanist } from "next/font/google";
 import Image from "next/image";
-  
+import gsap from "gsap";
+import SplitType from "split-type";
+import { useEffect, useRef } from "react";
 
-const inter = Inter({ weight: '600', subsets: ["latin"] });
-const interBold = Inter({ weight: '800', subsets: ["latin"] });
+const urbanist = Urbanist({ weight: "600", subsets: ["latin"] });
+const urbanistBold = Urbanist({ weight: "800", subsets: ["latin"] });
 
 const Hero = () => {
-    const lenis = useLenis(({ scroll }) => {
-        // called every scroll
-        // console.log(scroll);
-    });
+    const target = useRef(null);
+
+    useEffect(() => {
+        if (target.current) {
+            gsap.set(target.current, { visibility: "visible" });
+            const text = new SplitType(target.current, { tagName: "div" });
+            console.log(text);
+
+            const tl = gsap.timeline();
+
+            tl.from(
+                text.chars,
+                {
+                    autoAlpha: 0,
+                    yPercent: -100,
+                    transformOrigin: "50% 100%",
+                    z: -300,
+                    rotationX: 120,
+                    duration: 2.5,
+                    ease: "back.out",
+                    stagger: { amount: 0.5, from: "center" },
+                },
+                0.4
+            );
+
+            tl.to(
+                target.current,
+                { scale: 1, yPercent: 0, duration: 2, ease: "expo.inOut" },
+                "<2.2"
+            );
+
+            return () => {
+                tl.kill();
+            };
+        }
+    }, [target]);
 
     return (
-        <div className="pt-[2vh] pb-[15vh] px-6 xl:p-32 h-screen w-full flex flex-col gap-[3vh] justify-between primary-bg">
-            <nav className="w-full text-5xl rounded-3xl flex justify-center items-center" id="top">
-                <span className={interBold.className}>Making Great Things ...</span>
-            </nav>
-            <div className="flex flex-col gap-3 flex-1 hero rounded-3xl p-6 h-full">
-                <h2 className={inter.className}><span className="text-xl">Landed here!</span></h2>
-                <p className="text-sm mb-[3vh]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed quibusdam quaerat dolor maxime, natus laboriosam autem doloribus officia odit error enim molestias atque minima commodi, cupiditate deserunt similique, voluptates provident!</p>
-                <div className="relative flex-1">
-                    <Image
-                        src={"https://picsum.photos/400/600?random=12"}
-                        alt="Image"
-                        width={400}
-                        height={600}
-                        sizes="50vw"
-                        className="object-cover rounded-3xl w-full h-full absolute"
-                    />
-                </div>
+        <header className="h-screen w-full primary-bg">
+            <div className="w-full p-[0.2rem] lg:p-[2rem] h-full max-h-[90vh] overflow-hidden grid content-center">
+                
+                    <h1 className={`${urbanistBold.className} `} id="hero__title" ref={target}>
+                        Miguel_Nerok
+                    </h1>
             </div>
-        </div>
-    )
-}
+        </header>
+    );
+};
 
 export default Hero;

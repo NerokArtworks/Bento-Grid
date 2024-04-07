@@ -1,0 +1,36 @@
+#hero__title .line .word {
+    z-index: 10;
+    perspective: 800px;
+    perspective-origin: 50% 0;
+    transform-origin: 50% 0;
+    line-height: var(--line-height--1);
+    text-align: center;
+    font-weight: 700;
+    display: flex;
+    position: relative;
+    width: 100%;
+}
+
+#hero__title {
+    z-index: 10;
+    perspective: 800px;
+    perspective-origin: 50% 0;
+    transform-origin: 50% 0;
+    transform: scale(0.7);
+    visibility: hidden;
+}
+
+#hero__title .char {
+    backface-visibility: hidden;
+}
+
+/* #hero__title .line .word {
+    display: grid !important;
+    gap: 2rem;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    align-items: center;
+} */
+
+#hero__title .line .word .char {
+    font-size: 14cqw;
+}
