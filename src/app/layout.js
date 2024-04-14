@@ -15,7 +15,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${urbanist.className} overflow-hidden`}>
+      <body className={`${urbanist.className} overflow-hidden h-screen`}>
         <SmoothScrolling>
           <Noise />
           {children}

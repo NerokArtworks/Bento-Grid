@@ -39,7 +39,7 @@ const Nav = () => {
     return (
         <nav className="w-full fixed top-0 z-30 grid grid-cols-12 place-content-between items-center px-6 py-8 mix-blend-exclusion" id="top" ref={target}>
             <div className={`${urbanist.className} col-span-5 md:col-span-3 text-2xl md:text-4xl`}>Making Great Things.</div>
-            <div className={`${urbanist.className} col-start-8 col-span-3 md:col-span-1 md:col-start-11 text-center`}>{localTime}</div>
+            <div className={`${urbanist.className} col-start-8 col-span-3 md:col-span-1 md:col-start-11 text-center clock`}>{localTime}</div>
         </nav>
     )
 }

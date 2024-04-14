@@ -25,7 +25,11 @@ const Hero = () => {
             const tl = gsap.timeline();
 
             const scrollGsap = () => {
-                console.log(container.current);
+                window.scrollTo({
+                    top: 0,
+                    behavior: "instant",
+                });
+                
                 let e = gsap.timeline({
                     scrollTrigger: {
                         trigger: container.current,
@@ -36,7 +40,7 @@ const Hero = () => {
                         markers: false
                     },
                 });
-                e.set('body', { overflowY: 'scroll' });
+                e.set('body', { overflowY: 'scroll', height: 'auto' });
                 e.to(heroContainer.current, { scale: 0.5, yPercent: -20, duration: 2 }),
                 e.to(
                     text.chars,
@@ -54,7 +58,7 @@ const Hero = () => {
                 e.to(
                     heroDot.current,
                     {
-                        right: '44vw',
+                        right: 'calc(50vw - 2.75rem)',
                         transformOrigin: "center",
                         z: -300,
                         rotation: 360,
@@ -67,12 +71,12 @@ const Hero = () => {
                 e.to(
                     heroDot.current,
                     {
-                        top: '42vh',
+                        top: 'calc(50vh - 3.25rem)',
                         z: 300,
                         rotation: 0,
                         scale: 1,
                         borderRadius: '15%',
-                        duration: 0.8
+                        duration: 0.5
                     },
                     ">"
                 ),
@@ -83,7 +87,7 @@ const Hero = () => {
                         rotation: 360,
                         scale: 120,
                         borderRadius: '5px',
-                        duration: 0.8
+                        duration: 1
                     },
                     ">"
                 )
