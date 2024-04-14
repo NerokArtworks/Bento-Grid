@@ -1,9 +1,10 @@
-import { Inter } from "next/font/google";
 import "./globals.css";
 import SmoothScrolling from "@/components/SmoothScrolling";
 import Noise from "@/components/Noise";
+import { Urbanist } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+const urbanist = Urbanist({ weight: "600", subsets: ["latin"] });
+const urbanistBold = Urbanist({ weight: "800", subsets: ["latin"] });
 
 export const metadata = {
   title: "2024",
@@ -14,7 +15,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${urbanist.className} overflow-hidden`}>
         <SmoothScrolling>
           <Noise />
           {children}

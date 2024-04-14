@@ -38,6 +38,11 @@ body {
     rgb(var(--background-start-rgb)); */
 }
 
+nav {
+  /* background: var(--primary-bg); */
+  color: var(--secondary-font);
+}
+
 .primary-bg {
   background: var(--primary-bg);
 }
@@ -51,6 +56,10 @@ p {
   background: -webkit-linear-gradient(to left, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to left, #203b47, #192e35, var(--alter-primary-bg)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   color: var(--secondary-font);
+}
+
+.hero-dot {
+  background: var(--alter-primary-bg);
 }
 
 .hero.actions {

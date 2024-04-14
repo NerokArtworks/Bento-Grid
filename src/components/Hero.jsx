@@ -14,6 +14,7 @@ const Hero = () => {
     const target = useRef(null);
     const container = useRef(null);
     const heroContainer = useRef(null);
+    const heroDot = useRef(null);
 
     useEffect(() => {
         if (target.current) {
@@ -32,9 +33,10 @@ const Hero = () => {
                         end: "bottom 10%",
                         scrub: 2,
                         ease: "expo.inOut",
-                        markers: true
+                        markers: false
                     },
                 });
+                e.set('body', { overflowY: 'scroll' });
                 e.to(heroContainer.current, { scale: 0.5, yPercent: -20, duration: 2 }),
                 e.to(
                     text.chars,
@@ -48,7 +50,43 @@ const Hero = () => {
                         stagger: { each: 0.05, from: "end" },
                     },
                     "<0.7"
-                );
+                ),
+                e.to(
+                    heroDot.current,
+                    {
+                        right: '44vw',
+                        transformOrigin: "center",
+                        z: -300,
+                        rotation: 360,
+                        borderRadius: '100%',
+                        scale: 0.5,
+                        duration: 0.8
+                    },
+                    "1"
+                ),
+                e.to(
+                    heroDot.current,
+                    {
+                        top: '42vh',
+                        z: 300,
+                        rotation: 0,
+                        scale: 1,
+                        borderRadius: '15%',
+                        duration: 0.8
+                    },
+                    ">"
+                ),
+                e.to(
+                    heroDot.current,
+                    {
+                        z: -300,
+                        rotation: 360,
+                        scale: 120,
+                        borderRadius: '5px',
+                        duration: 0.8
+                    },
+                    ">"
+                )
             };
 
             tl.from(
@@ -76,11 +114,16 @@ const Hero = () => {
                 tl.kill();
             };
         }
-    }, [target]);
+    }, [target, container, heroContainer, heroDot]);
 
     return (
-        <header className="h-[260svh] w-full primary-bg relative" ref={container}>
+        <header className="h-[450svh] w-full primary-bg" ref={container}>
+            <div className="w-full fixed top-0 grid grid-cols-12 place-content-start items-center place-items-end px-6 py-8 overflow-hidden h-screen">
+                <div className={`${urbanist.className} col-span-5 md:col-span-3 text-2xl md:text-4xl opacity-0 pointer-events-none`}>Making Great Things ...</div>
+                <div className="w-10 h-10 hero-dot col-start-12 relative" ref={heroDot}></div>
+            </div>
             <div className="w-full sticky top-0 p-[0.2rem] lg:p-[2rem] h-full max-h-[90vh] overflow-hidden grid content-center" ref={heroContainer}>
+                
                 <h1 className={`${urbanistBold.className} `} id="hero__title" ref={target}>
                     Miguel.Nerok
                 </h1>

@@ -16,9 +16,10 @@ export default function Home() {
   return (
     <main className="flex flex-col w-full min-h-screen">
       {/* <ImageList /> */}
+      <Nav />
       <Hero />
       <Menu />
-      <Grid />
+      {/* <Grid /> */}
       <GridAux />
       <GridAux />
     </main>
