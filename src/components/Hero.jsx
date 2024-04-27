@@ -156,7 +156,7 @@ const Hero = () => {
             </div>
             <div className="w-full sticky top-0 p-[0.2rem] lg:p-[2rem] h-full max-h-[90vh] overflow-hidden grid content-center" ref={heroContainer}>
                 
-                <h1 className={`${urbanistBold.className} `} id="hero__title" ref={target}>
+                <h1 className={`${urbanistBold.className} select-none`} id="hero__title" ref={target}>
                     Miguel.Nerok
                 </h1>
             </div>
