@@ -43,6 +43,19 @@ nav {
   color: var(--secondary-font);
 }
 
+.nav__line {
+  line-height: 1.8rem;
+}
+
+.nav__time {
+  line-height: 1rem;
+}
+
+.nav__line, .nav__time {
+  transform: rotate3d(0, 1, 1, -10deg) translateY(-100%);
+  transform-origin: top left;
+}
+
 .primary-bg {
   background: var(--primary-bg);
 }
@@ -60,6 +73,8 @@ p {
 
 .hero-dot {
   background: var(--alter-primary-bg);
+  transform: translateX(50vw) rotate(180deg);
+  border-radius: 100%;
 }
 
 .hero.actions {

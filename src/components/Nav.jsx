@@ -37,9 +37,23 @@ const Nav = () => {
     }, []);
     
     return (
-        <nav className="w-full fixed top-0 z-30 grid grid-cols-12 place-content-between items-center px-6 py-8 mix-blend-exclusion" id="top" ref={target}>
-            <div className={`${urbanist.className} col-span-5 md:col-span-3 text-2xl md:text-4xl`}>Making Great Things.</div>
-            <div className={`${urbanist.className} col-start-8 col-span-3 md:col-span-1 md:col-start-11 text-center clock`}>{localTime}</div>
+        <nav className="w-full fixed top-0 z-30 grid grid-cols-12 place-content-between items-start px-6 py-8 mix-blend-exclusion" id="top" ref={target}>
+            <div className={`${urbanist.className} col-span-5 md:col-span-auto text-2xl md:text-4xl flex flex-wrap gap-2`}>
+                <div className="overflow-hidden h-fit">
+                    <div className="nav__line md:leading-normal">Making</div>
+                </div>
+                <div className="overflow-hidden h-fit">
+                    <div className="nav__line md:leading-normal">Great</div>
+                </div>
+                <div className="overflow-hidden h-fit">
+                    <div className="nav__line md:leading-normal">Things.</div>
+                </div>
+            </div>
+            <div className={`${urbanist.className} col-start-8 col-span-3 md:col-span-1 md:col-start-11 text-center md:self-center clock overflow-hidden h-fit`}>
+                <div className="nav__time md:leading-normal">
+                    {localTime}    
+                </div>
+            </div>
         </nav>
     )
 }

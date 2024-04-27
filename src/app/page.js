@@ -19,7 +19,6 @@ export default function Home() {
       <Nav />
       <Hero />
       <Menu />
-      {/* <Grid /> */}
       <GridAux />
       <GridAux />
     </main>

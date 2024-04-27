@@ -110,8 +110,26 @@ const Hero = () => {
 
             tl.to(
                 target.current,
-                { scale: 1, yPercent: 0, duration: 2, ease: "expo.inOut", onComplete: scrollGsap },
+                { scale: 1, yPercent: 0, duration: 2, ease: "expo.inOut"},
                 "<2.2"
+            );
+
+            // tl.to(
+            //     'nav',
+            //     { y: 0, duration: 1, ease: "expo.Out", onComplete: scrollGsap },
+            //     "<0.8"
+            // );
+
+            tl.to(
+                ['.nav__line', '.nav__time'],
+                { x: 0, y: 0, duration: 1, rotate: 0, ease: "power4.out", stagger: 0.2 },
+                "<1"
+            );
+
+            tl.to(
+                heroDot.current,
+                { x: 0, duration: 1, rotate: 0, ease: "power4.out", borderRadius: 0, onComplete: scrollGsap },
+                "<0.6"
             );
 
             return () => {
@@ -122,9 +140,19 @@ const Hero = () => {
 
     return (
         <header className="h-[450svh] w-full primary-bg" ref={container}>
-            <div className="w-full fixed top-0 grid grid-cols-12 place-content-start items-center place-items-end px-6 py-8 overflow-hidden h-screen">
-                <div className={`${urbanist.className} col-span-5 md:col-span-3 text-2xl md:text-4xl opacity-0 pointer-events-none`}>Making Great Things ...</div>
-                <div className="w-10 h-10 hero-dot col-start-12 relative" ref={heroDot}></div>
+            <div className="w-full fixed top-0 grid grid-cols-12 place-content-between items-start place-items-end px-6 py-8 overflow-hidden h-screen">
+                <div className={`${urbanist.className} col-span-5 md:col-span-auto text-2xl md:text-4xl opacity-0 pointer-events-none flex flex-wrap gap-2`}>
+                    <div className="overflow-hidden h-fit">
+                        <div className="md:leading-normal">Making</div>
+                    </div>
+                    <div className="overflow-hidden h-fit">
+                        <div className="md:leading-normal">Great</div>
+                    </div>
+                    <div className="overflow-hidden h-fit">
+                        <div className="md:leading-normal">Things.</div>
+                    </div>
+                </div>
+                <div className="w-10 h-10 hero-dot col-start-12 relative md:self-center" ref={heroDot}></div>
             </div>
             <div className="w-full sticky top-0 p-[0.2rem] lg:p-[2rem] h-full max-h-[90vh] overflow-hidden grid content-center" ref={heroContainer}>
                 
